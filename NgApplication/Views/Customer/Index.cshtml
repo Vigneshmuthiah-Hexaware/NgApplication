@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/Scripts/angular.js"></script>
+
+<h2>Customer List</h2>
+<div ng-app="myApp" ng-controller="myCtrl">
+
+    <table ng-model="selectedName">
+        <tr ng-repeat="x in names">
+            <td>{{x}}</td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+    //$scope.names = ["Emil", "Tobias", "Linus"];
+
+    $http.get("/api/users").then(function (response) {
+        $scope.names = response.data;
+        //window.alert('hi');
+    });
+});
+</script>
