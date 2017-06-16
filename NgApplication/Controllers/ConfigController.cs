@@ -13,5 +13,11 @@ namespace NgApplication.Controllers
         {
             return View();
         }
+
+        [HttpPost]
+        public ActionResult Create()
+        {
+            return View();
+        }
     }
 }
