@@ -19,5 +19,11 @@ namespace NgApplication.Controllers
         {
             return View();
         }
+
+        [HttpDelete]
+        public ActionResult Delete()
+        {
+            return View();
+        }
     }
 }
